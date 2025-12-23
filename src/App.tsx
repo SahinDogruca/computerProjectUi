@@ -1,24 +1,20 @@
-import ModelForm from "./components/ModelForm"
-import PredictGallery from "./components/PredictGallery"
-import { useState } from 'react'
+import Metrics from "./components/Metrics";
+import ModelForm from "./components/ModelForm";
+import PredictGallery from "./components/PredictGallery";
 
 const App = () => {
-  const [model, setModel] = useState([])
-
-  
-
   return (
-    <div>
-      <div>
+    <div className="w-1/2 mx-auto m-10 flex flex-col min-h-150">
+      <div className="flex justify-center mb-10 shrink-0">
         <ModelForm />
       </div>
 
-      <div>
+      <div className="flex-1 min-h-50 text-center">
         <PredictGallery />
+        <Metrics />
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
