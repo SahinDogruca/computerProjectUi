@@ -1,11 +1,7 @@
 import ModelCart from "../components/ModelCart";
 import ModelCartContainer from "../components/ModelCartContainer";
 
-const modelNames = [
-  "yolov8x-seg-pretrained",
-  "yolov8x-seg-pretrained",
-  "yolov8x-seg-pretrained",
-];
+const modelNames = ["yolov8x-seg-pretrained", "yolov12l-seg"];
 
 const ModelsAbout = () => {
   return (
