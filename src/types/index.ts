@@ -65,8 +65,3 @@ export type ModelDetailResponse = {
   metrics: Metrics;
   graphics: GraphicItem[];
 };
-
-export type UploadModelResponse = {
-  message: string;
-  filename: string;
-};
