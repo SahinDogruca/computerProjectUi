@@ -150,30 +150,6 @@ const DatasetsAbout = () => {
     },
   ];
 
-  const renderSplit = (split: DatasetSplit) => {
-    return (
-      <div className="mb-6">
-        <div className="text-green-600 font-semibold mb-2">
-          {split.name} Set:
-        </div>
-        <div className="ml-4">
-          <div>Images: {split.images}</div>
-          <div>Labels: {split.labels}</div>
-          <div>Total instances: {split.totalInstances}</div>
-          <div className="mt-2">Classes distribution:</div>
-          <div className="ml-4">
-            {split.classes.map((cls, idx) => (
-              <div key={idx}>
-                {cls.name.padEnd(20)} : {cls.count.toString().padStart(4)} (
-                {cls.percentage.toFixed(1).padStart(5)}%)
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 mx-auto">
       <div className="max-w-7xl mx-auto">

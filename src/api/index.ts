@@ -66,3 +66,21 @@ export const fetchModelDetail = async (
 
   return await response.json();
 };
+
+export const fetchUploadModel = async (file: File, modelName: string) => {
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("model_name", modelName);
+
+  const response = await fetch("http://localhost:8000/load/model", {
+    method: "POST",
+    body: formData,
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.detail);
+  }
+
+  return await response.json();
+};
