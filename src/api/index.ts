@@ -72,7 +72,7 @@ export const fetchUploadModel = async (file: File, modelName: string) => {
   formData.append("file", file);
   formData.append("model_name", modelName);
 
-  const response = await fetch("http://localhost:8000/load/model", {
+  const response = await fetch(`${BASE_URL}/load/model`, {
     method: "POST",
     body: formData,
   });

@@ -129,37 +129,14 @@ const SelectImage = ({
             </Button>
           </TooltipTrigger>
           <TooltipContent>
-            <strong>YOLO Models</strong>
             <ul>
               <li>
                 File type: <code>.txt</code>
               </li>
               <li>Format: YOLO polygon (segmentation)</li>
+              <li>Or YOLO (object detection)</li>
               <li>One object per line</li>
             </ul>
-
-            <strong>RT-DETR Models</strong>
-            <ul>
-              <li>
-                File type: <code>.json</code>
-              </li>
-              <li>Format: Simplified COCO</li>
-              <li>
-                <pre>
-                  {`{
-                    "annotations": [
-                      {"class_id": 0, "bbox": [x1, y1, x2, y2]},
-                      {"class_id": 1, "bbox": [x1, y1, x2, y2]}
-                    ]
-                  }`}
-                </pre>
-              </li>
-            </ul>
-
-            <em>
-              GT file is optional. If provided, prediction <br /> and ground
-              truth will be visualized together.
-            </em>
           </TooltipContent>
         </Tooltip>
 

@@ -16,13 +16,17 @@ const normalizeMetric = (m: any): DetectionMetricString => ({
 export const normalizeMetrics = (metrics: Metrics): Metrics => ({
   summary: {
     box: normalizeMetric(metrics.summary.box),
-    mask: normalizeMetric(metrics.summary.mask),
+    ...(metrics.summary.mask && {
+      mask: normalizeMetric(metrics.summary.mask),
+    }),
     fitness: Number(metrics.summary.fitness).toFixed(3),
   },
   classes: metrics.classes.map((cls) => ({
     ...cls,
     box: normalizeMetric(cls.box),
-    mask: normalizeMetric(cls.mask),
+    ...(cls.mask && {
+      mask: normalizeMetric(cls.mask),
+    }),
   })),
 });
 

@@ -1,13 +1,9 @@
-import { NavLink, Link } from "react-router";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
   return (
     <div className="px-10 py-3 flex bg-slate-800 shadow text-slate-50 text-lg font-medium">
-      <div className="flex-none w-10 h-10">
-        <Link to="/">
-          <img src="/vite.svg" alt="logo" />
-        </Link>
-      </div>
+      <div className="flex-none w-10 h-10"></div>
 
       <nav className="ml-auto flex w-fit gap-5 my-auto">
         <NavLink

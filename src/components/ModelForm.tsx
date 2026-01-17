@@ -76,6 +76,7 @@ const ModelForm = ({ selectedModel, setSelectedModel }: ModelFormProbs) => {
           ))}
         </SelectContent>
       </Select>
+      <div className="w-px h-7 border border-slate-400 mx-3 rounded"></div>
       <Input
         className="w-fit"
         type="text"

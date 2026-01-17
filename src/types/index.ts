@@ -31,12 +31,12 @@ export type ClassMetric = {
   class_id: number;
   class_name: string;
   box: DetectionMetricString;
-  mask: DetectionMetricString;
+  mask?: DetectionMetricString;
 };
 
 export type MetricsSummary = {
   box: DetectionMetricString;
-  mask: DetectionMetricString;
+  mask?: DetectionMetricString;
   fitness: string;
 };
 

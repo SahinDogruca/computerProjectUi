@@ -11,6 +11,8 @@ type ImageKey = "pred_image" | "gt_image" | "overlay_image";
 const PredictResults = ({ results, resultsLoading }: PredictResultsProbs) => {
   const [activeImage, setActiveImage] = useState<ImageKey>("pred_image");
 
+  console.log(results);
+
   const images: { key: ImageKey; label: string }[] = [
     { key: "pred_image", label: "Prediction" },
     { key: "gt_image", label: "Ground Truth" },
@@ -78,26 +80,32 @@ const PredictResults = ({ results, resultsLoading }: PredictResultsProbs) => {
         </div>
       )}
 
-      <div className="w-full h-px bg-slate-400 my-3"></div>
+      {results && (
+        <>
+          <div className="w-full h-px bg-slate-400 my-3"></div>
 
-      <div className="mt-5">
-        {results && (
-          <>
+          <div className="mt-5">
             {resultsLoading ? (
               <div className="h-40 w-full animate-pulse bg-slate-300"></div>
             ) : (
-              <div className="w-3/4 bg-slate-100 mx-auto text-center p-2 rounded-xl shadow">
-                <h2>Confidence Chart</h2>
-                <img
-                  src={`data:image/png;base64,${results.confidence_chart}`}
-                  alt="Confidence Chart"
-                  className="w-full mt-2 object-contain h-auto"
-                />
-              </div>
+              <>
+                <div className="w-3/4 bg-slate-100 mx-auto text-center p-2 rounded-xl shadow">
+                  <h2>Confidence Chart</h2>
+                  <img
+                    src={`data:image/png;base64,${results.confidence_chart}`}
+                    alt="Confidence Chart"
+                    className="w-full mt-2 object-contain h-auto"
+                  />
+
+                  <h4 className="font-medium mt-3 text-slate-950">
+                    Inference Time (cpu) : <span>{results.inference_time}</span>
+                  </h4>
+                </div>
+              </>
             )}
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

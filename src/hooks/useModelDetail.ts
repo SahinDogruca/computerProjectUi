@@ -18,6 +18,8 @@ export const useModelDetail = (model_name: string) => {
 
         const data: ModelDetailResponse = await fetchModelDetail(model_name);
 
+        console.log("data", data);
+
         const normalizedData: ModelDetailResponse = {
           ...data,
           metrics: normalizeMetrics(data.metrics),

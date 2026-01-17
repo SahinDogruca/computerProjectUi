@@ -1,6 +1,13 @@
 import ModelCartContainer from "../components/ModelCartContainer";
 
-const modelNames = ["yolov8x-seg-pretrained", "yolov12l-seg"];
+const modelNames = [
+  "yolov8x-seg-pretrained",
+  "yolov8x-seg",
+  "yolov12l-seg-pretrained",
+  "yolov12l-seg",
+  "rt-detrv4x-pretrained",
+  "rt-detrv4x",
+];
 
 const ModelsAbout = () => {
   return (
